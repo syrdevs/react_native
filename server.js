@@ -3,7 +3,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-mongoose.connect("mongodb://127.0.0.1:27017/mean_lessons");
+//mongoose.connect("mongodb://127.0.0.1:27017/mean_lessons");
 
 const app = express();
 // show status and console log in terminal
