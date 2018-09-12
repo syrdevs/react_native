@@ -18,9 +18,9 @@ app.use(logger('dev'));
 
 app
   .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
+  //.set('views', path.join(__dirname, 'views'))
+  //.set('view engine', 'ejs')
+  //.get('/', (req, res) => res.render('pages/index'))
   
   
 app.use(bodyParser.urlencoded({limit:'50mb', extended: true}));
