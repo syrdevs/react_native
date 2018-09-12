@@ -12,6 +12,15 @@ const app = express();
 // show status and console log in terminal
 //app.use(logger('dev'));
 // jsons to req.bodymodule
+
+
+app
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('pages/index'))
+  
+  
 app.use(bodyParser.urlencoded({limit:'50mb', extended: true}));
 //max size of requests
 app.use(bodyParser.json({limit:'50mb'}));
