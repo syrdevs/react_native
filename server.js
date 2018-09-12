@@ -2,6 +2,9 @@ const express = require('express');
 /*const logger = require('morgan');
 const mongoose = require('mongoose');*/
 const bodyParser = require('body-parser');
+const path = require('path')
+const PORT = process.env.PORT || 5000
+
 /*const path = require('path');*/
 //mongoose.connect("mongodb://127.0.0.1:27017/mean_lessons");
 
@@ -15,7 +18,10 @@ app.use(bodyParser.json({limit:'50mb'}));
 
 app.get('/api/hello',(req,res) => {
     res.status(200).send({msg:"WORK!"});
-})
+});
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
 
 //app.use(express.static(path.join(__dirname,"client/build"),{maxAge:1}))
 
