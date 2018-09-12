@@ -26,10 +26,10 @@ router.post('/', passport.authenticate('jwt', {session: false}),upload.single("i
        const tempPath = req.file.path;
        const dateforfile = req.user.name+Date.now()+'.'+req.file.originalname.split('.')
            .slice(-1).pop();
-       const targetPath = path.resolve('client/public/images/blogimages/'+ dateforfile.replace(/ /g,""));
+       const targetPath = path.resolve('server/uploads/blogimages/'+ dateforfile.replace(/ /g,""));
        fs.rename(tempPath, targetPath, (errors) => {
            if (errors) return next(errors);
-           blog.image = "images/blogimages/"+dateforfile.replace(/ /g,"");
+           blog.image = "blogimages/"+dateforfile.replace(/ /g,"");
            blog.save((error, blog) =>{
                if(error) return next(error);
                res.status(200).send(blog);
@@ -85,7 +85,7 @@ router.put ('/', passport.authenticate('jwt', {session: false}), upload.single("
                 fs.unlink(path.resolve("client/public/"+blog.image), err=> {
                         const tempPath = req.file.path;
                         const dateforfile = req.user.name+Date.now()+'.'+req.file.originalname.split('.').slice(-1).pop();
-                        const targetPath = path.resolve('client/public/images/blogimages/'+ dateforfile.replace(/ /g,""));
+                        const targetPath = path.resolve('server/uploads/blogimages/'+ dateforfile.replace(/ /g,""));
                         fs.rename(tempPath, targetPath, (errors) => {
                             if (errors) return next(errors);
 
