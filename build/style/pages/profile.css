@@ -1,0 +1,18 @@
+.profile {
+    display:  flex;
+    justify-content: space-between;
+}
+.profile-author {
+    width: calc(30% - 20px);
+    margin: 0 10px;
+}
+
+.profile-blogs {
+    width: 70%;
+}
+.profile-header {
+    display: flex;
+    padding: 20px;
+    font-size: 20px;
+    align-items: center;
+}

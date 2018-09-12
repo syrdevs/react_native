@@ -17,7 +17,7 @@ app.use(logger('dev'));
 
 
 app
-  .use(express.static(path.join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname,"build"),{maxAge:1}))	
   //.set('views', path.join(__dirname, 'views'))
   //.set('view engine', 'ejs')
   //.get('/', (req, res) => res.render('pages/index'))
