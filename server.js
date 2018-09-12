@@ -13,9 +13,9 @@ app.use(bodyParser.urlencoded({limit:'50mb', extended: true}));
 //max size of requests
 app.use(bodyParser.json({limit:'50mb'}));
 
-/*app.get('/api/hello',(req,res) => {
+app.get('/api/hello',(req,res) => {
     res.status(200).send({msg:"WORK!"});
-})*/
+})
 
 app.use(express.static(path.join(__dirname,"client/build"),{maxAge:1}))
 
